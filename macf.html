@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang='uk'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
+  <title>MacF*ck</title>
+  <meta name='color-scheme' content='light'>
+  <style>
+    :root { --bg:#fff; --fg:#111; --accent:#d71921; --accent2:#ffcc00; --muted:#777; }
+    *{box-sizing:border-box} html,body{height:100%;margin:0}
+    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--fg);display:flex;align-items:center;justify-content:center}
+    .card{width:100%;max-width:420px;height:100dvh;padding:24px 20px;display:grid;grid-template-rows:auto auto auto 1fr auto auto;gap:12px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:42px;height:42px;object-fit:contain}
+    .brand{font-weight:900;letter-spacing:.2px;font-size:20px;line-height:1}
+    .tagline{font-size:13px;color:var(--muted)}
+    .brand-accent{height:4px;width:72px;background:var(--accent);border-radius:2px;margin-top:6px}
+    .dish{font-size:32px;font-weight:800;line-height:1.05;margin-top:12px}
+    .price{display:flex;align-items:baseline;gap:10px;margin-top:6px}
+    .price-old{color:#b1b1b1;text-decoration:line-through;font-size:20px}
+    .price-new{color:var(--accent);font-weight:900;font-size:28px}
+    .cta{margin-top:auto;padding:16px 18px;width:100%;border:none;border-radius:14px;font-size:18px;font-weight:800;background:var(--accent);color:#fff;cursor:pointer;box-shadow:0 8px 18px rgba(0,0,0,.12);transform:translateZ(0)}
+    .cta:active{transform:scale(.98)}
+    .badge{font-size:11px;color:var(--muted);text-align:center;margin-top:8px}
+  </style>
+</head>
+<body>
+  <main class='card'>
+    <header class='logo'>
+      <img src='https://YOUR_USER_OR_ORG.github.io/parody-landing/assets/logo-macf.svg' alt='MacF*ck logo'>
+      <div>
+        <div class='brand'>MacF*ck</div>
+        <div class='tagline'>No happy meals here.</div>
+        <div class='brand-accent'></div>
+      </div>
+    </header>
+
+    <section>
+      <div class='dish' id='dish'></div>
+      <div class='price'>
+        <div class='price-old'>666 zł</div>
+        <div class='price-new'>28 zł</div>
+      </div>
+    </section>
+
+    <button class='cta' id='cta'></button>
+    <div class='badge'>Parody brand. Not affiliated.</div>
+  </main>
+
+  <script>
+    const dishes = ['Big F*ck', 'Quarter Punder', 'Sad Meal']
+    const ctas = ['Get f*cked', 'Order Regret', 'Pay Too Much']
+    const pick = a => a[Math.floor(Math.random()*a.length)]
+    document.getElementById('dish').textContent = pick(dishes)
+    document.getElementById('cta').textContent = pick(ctas)
+    document.getElementById('cta').addEventListener('click',()=>alert('Thanks for your questionable taste.'))
+  </script>
+</body>
+</html>
