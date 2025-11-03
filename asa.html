@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ASA Menu Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --page-bg: #fcfcfc;
+      --card-bg: #ffffff;
+      --text-primary: #222222;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --accent: #ffa11b;
+      --accent-dark: #d47d00;
+      --border-soft: rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: min(92vw, 440px);
+      margin: 0 auto;
+      padding: 32px 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .intro {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .intro h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .intro p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 24px;
+    }
+
+    .dish-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(9, 9, 12, 0.08);
+      border: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dish-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .dish-info {
+      padding: 20px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dish-name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    .dish-ingredients {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .dish-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dish-weight {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .dish-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+
+    .cta {
+      margin-top: 8px;
+      padding: 0;
+    }
+
+    .cta button {
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      padding: 15px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(255, 161, 27, 0.25);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .cta button:active {
+      transform: translateY(1px);
+      box-shadow: 0 12px 30px rgba(212, 125, 0, 0.28);
+    }
+
+    @media (max-width: 390px) {
+      main {
+        width: min(94vw, 420px);
+        padding-top: 28px;
+      }
+
+      .dish-card img {
+        height: 200px;
+      }
+
+      .dish-info {
+        padding: 18px 18px 22px;
+      }
+
+      .dish-name {
+        font-size: 19px;
+      }
+
+      .dish-price {
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="menu-list">
+      <article class="dish-card">
+        <img src="asa_assets/ryz_z_kurczakiem.png" alt="Smażony ryż z kurczakiem i warzywami">
+        <div class="dish-info">
+          <h2 class="dish-name">Smażony ryż z kurczakiem i warzywami</h2>
+          <p class="dish-ingredients">ryż, filet z kurczaka, cebula, marchew, groszek konserwowany, papryka czerwona, szczypior, sezam biały, sos sojowy, olej rzepakowy</p>
+          <div class="dish-meta">
+            <span class="dish-weight">380g</span>
+            <span class="dish-price">29 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <img src="asa_assets/udon_z_wieprzowiną.png" alt="Udon z wieprzowiną">
+        <div class="dish-info">
+          <h2 class="dish-name">Udon z wieprzowiną</h2>
+          <p class="dish-ingredients">makaron udon, wieprzowina marynowana, papryka czerwona, cukinia, cebula, por, sezam, sos sojowy, sos tonkatsu, sos unagi, cytryna</p>
+          <div class="dish-meta">
+            <span class="dish-weight">380g</span>
+            <span class="dish-price">34 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <img src="asa_assets/bowl_z_warzywami.png" alt="Bowl z warzywami">
+        <div class="dish-info">
+          <h2 class="dish-name">Bowl z warzywami</h2>
+          <p class="dish-ingredients">Ryż, grzyby shiitake, papryka czerwona, groszek, mango, sałatka wakame, sezam czarny, sos unagi, sezam biały.</p>
+          <div class="dish-meta">
+            <span class="dish-weight">350g</span>
+            <span class="dish-price">24 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <img src="asa_assets/more_meat.jpeg" alt='Pizza "More meat"'>
+        <div class="dish-info">
+          <h2 class="dish-name">Pizza “More meat”</h2>
+          <p class="dish-ingredients">Sos pomidorowy, ser mozzarella, kurczak marynowany, szynka, mięso mielone, boczek, por</p>
+          <div class="dish-meta">
+            <span class="dish-weight">480g</span>
+            <span class="dish-price">32 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <img src="asa_assets/cezar.jpg" alt="Cezar z kurczakiem">
+        <div class="dish-info">
+          <h2 class="dish-name">Cezar z kurczakiem</h2>
+          <p class="dish-ingredients">salat rzymski, sałata lodowa, marynowany kurczak, pomidor koktajlowy, sos cezar, grzanki, ser grana padano</p>
+          <div class="dish-meta">
+            <span class="dish-weight">400g</span>
+            <span class="dish-price">40 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <img src="asa_assets/philadelphia_pol_na_pol.png" alt="Zestaw Philadelphia pół na pół (20 szt)">
+        <div class="dish-info">
+          <h2 class="dish-name">Zestaw Philadelphia pół na pół (20 szt)</h2>
+          <p class="dish-ingredients">Philadelphia z krewetkami (4 szt), Philadelphia z łososiem (8 szt), Philadelphia z tuńczykiem (4 szt), Philadelphia z węgorzem (4szt)</p>
+          <div class="dish-meta">
+            <span class="dish-weight">640g</span>
+            <span class="dish-price">97 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <img src="asa_assets/sushi_hot_dog.jpg" alt="Sushi Hot Dog Asa Lux">
+        <div class="dish-info">
+          <h2 class="dish-name">Sushi Hot Dog Asa Lux</h2>
+          <p class="dish-ingredients">ryż, łosoś, tuńczyk, pasta surimi, ser twarogowy, nori, awokado, sałata lollo, tobikko black, panierka panko, panierka tempura, sos poke, sos unagi</p>
+          <div class="dish-meta">
+            <span class="dish-weight">470g</span>
+            <span class="dish-price">62 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <img src="asa_assets/burger.jpeg" alt="Burger z pieczonym łososiem">
+        <div class="dish-info">
+          <h2 class="dish-name">Burger z pieczonym łososiem</h2>
+          <p class="dish-ingredients">ryż, nori, ser twarogowy, tobiko red, ogórek, łosoś pieczony, sos unagi, migdały płatki, panierka panko, panierka tempura</p>
+          <div class="dish-meta">
+            <span class="dish-weight">350g</span>
+            <span class="dish-price">55 zł</span>
+          </div>
+          <div class="cta">
+            <button type="button">Dodaj do zamówienia</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
